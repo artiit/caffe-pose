@@ -1,0 +1,28 @@
+net: "models/limb/flic_test3.prototxt"
+
+test_iter: 127
+#test_iter: 100
+
+#iter_size: 2
+
+test_interval: 500
+snapshot: 1000
+display: 20
+
+
+base_lr: 0.000002
+
+#lr_policy: "fixed"
+#gamma: 0.1
+
+lr_policy: "step"
+gamma: 0.05
+stepsize: 5000
+
+
+max_iter: 1000000
+momentum: 0.95
+weight_decay: 0.005
+
+snapshot_prefix: "data/flic/test/1/1"
+solver_mode: GPU

@@ -1,0 +1,23 @@
+net: "models/heatmap-flic-fusion/idea1/full_label.prototxt"
+
+test_iter: 1016
+
+test_interval: 500
+snapshot: 5000
+display: 20
+
+base_lr: 0.00000001
+
+#lr_policy: "fixed"
+#gamma: 0.1
+
+lr_policy: "step"
+gamma: 0.05
+stepsize: 30000
+
+max_iter: 10000000
+momentum: 0.95
+weight_decay: 0.5
+
+snapshot_prefix: "data/flic/nets/full_label/full_label"
+solver_mode: GPU

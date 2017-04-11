@@ -1,0 +1,23 @@
+1.将data_heatmap.cpp 复制到caffe/src/layers下
+
+2.将data_heatmap.hpp 复制到caffe/include/caffe/layers下
+
+3.将base_data_layer.cpp 覆盖caffe中的相应文件，或者按照里面改的做相应修改，用//ai2016//注释的部分
+
+4.base_data_layer.cu 做和3一样的改动或者覆盖,所有有//ai2016//注释之间的部分。（包括，forwardcpu,forwardgpu,layersetup）
+
+5.data_layers.hpp 中找到class Batch, 在Blob 后加入 limb_label_(可参考旧版本的做法).
+//其实需要改的是base_data_layer.hpp里的，因为class Batch 在它里面。但是之前的版本这个头文件是在data_layers.hpp里的。现在的版本则独立了出来，在layers/base_data_layer.hpp里。所以只需要在它里面加上limb_label_就好了
+
+6.euclidean_loss_heatmap_layer.cpp 复制到src/layers下
+
+7.euclidean_loss_heatmap_layer.hpp 复制到include/caffe/layers下
+
+8.channel_dropout_layer.hpp 复制到include/caffe/layers下
+
+9.channel_dropout_layer.cpp 复制到src/caffe/layers下
+
+10.在caffe.proto里做相应的添加，可参考旧版本的添加，和网址http://blog.csdn.net/shuzfan/article/details/51322976
+
+**
+可能改后data_heatmap.cpp/h, euclidean_loss_heatmap_layer.cpp/h需要的头文件路径也需要改动，有些之前有的头文件新版本里没有了或者变了。根据make all提示的错误再修改。 
