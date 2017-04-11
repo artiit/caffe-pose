@@ -1,4 +1,4 @@
-# Caffe-heatmap
+# Fork from caffe-heatmap
 
 This is a fork of Caffe that enables training of heatmap regressor ConvNets for the general problem of regressing (x,y) positions in images.
 
